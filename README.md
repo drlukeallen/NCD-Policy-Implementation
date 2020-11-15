@@ -3,4 +3,7 @@ Data and replication code for regression analyses for "Implementation of non-com
 
 Authors: Luke Allen, Hampus Holmer, and Simon Wigley                                                                                                  
 Draft: 15 Nov 2020                                                                                                                                    
-Data and code not to be used or cited without permission of authors                                                                                   
+Data and code not to be used or cited without permission of authors
+
+R code produce results for lasso procedure and multiplicative interaction models.
+Stata files produce all other results.
