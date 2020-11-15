@@ -1,0 +1,195 @@
+﻿Country,ISO-3,Income,WHO region,WB region,National NCD targets,Mortality data,Risk factor surveys,National action plan,Tobacco tax,Smoke-free places,Graphic warnings,Tobacco advertising bans,Tobacco mass media,Alcohol sale restrictions,Alcohol advertising bans,Alcohol tax,Salt policies,Fat policies,Child food marketing,Breast milk code,Physical activity mass media,Clinical guidelines,Cardiovascular therapies,Total
+Afghanistan,AFG,Low income,EMRO,South Asia,0,0,0.5,1,0,1,0,1,0,1,1,1,0,0,0,1,0,0,0,7.5
+Albania,ALB,Upper middle income,EURO,Europe & Central Asia,1,0.5,0.5,1,0.5,1,0.5,1,0,0.5,0,0.5,0,0,1,1,0,0.5,0,9.5
+Algeria,DZA,Upper middle income,AFRO,Middle East & North Africa,0,0,0.5,0.5,0,0.5,0,0.5,NR,0,0,0,0,0,0,0.5,0,0.5,0,3
+Andorra,AND,High income,EURO,Europe & Central Asia,0,0.5,0.5,0,1,0.5,0,0,0,0.5,0,0.5,0,0,0,0.5,0,0,DK,4
+Angola,AGO,Lower middle income,AFRO,Sub-Saharan Africa,0,0,0.5,0,0,0.5,0,0,NR,0.5,0,0,0,DK,0,0,0,0,0,1.5
+Antigua and Barbuda,ATG,High income,PAHO,Latin America & Caribbean,1,1,0,1,0,1,0.5,1,0,0.5,0,0,0,0,0,0,1,0,0,7
+Argentina,ARG,Upper middle income,PAHO,Latin America & Caribbean,1,1,1,0.5,1,1,1,0.5,0.5,0.5,0.5,0,0.5,1,0,0.5,0.5,1,0.5,12.5
+Armenia,ARM,Upper middle income,EURO,Europe & Central Asia,1,1,1,1,0,0.5,1,0,NR,0.5,0.5,0.5,0,0.5,0,1,0.5,0.5,0.5,10
+Australia,AUS,High income,WPRO,East Asia & Pacific,0,1,0.5,0,1,1,1,0.5,1,0.5,0,0,0.5,0.5,1,0,1,1,DK,10.5
+Austria,AUT,High income,EURO,Europe & Central Asia,0,1,0.5,0,1,0,1,0.5,1,0,0.5,0,0.5,1,0,0.5,1,0.5,1,10
+Azerbaijan,AZE,Upper middle income,EURO,Europe & Central Asia,0.5,0.5,1,1,0,0.5,0.5,1,0.5,0.5,NR,0.5,0.5,1,1,0.5,0.5,1,0,11
+Bahamas,BHS,High income,PAHO,Latin America & Caribbean,1,1,0.5,0.5,NR,0,0,0,0,0.5,0,0.5,0,0,0,0,1,0.5,DK,5.5
+Bahrain,BHR,High income,EMRO,Middle East & North Africa,1,0.5,0.5,1,0.5,0,0.5,1,0.5,0.5,0,0.5,1,1,1,1,0.5,0.5,1,12.5
+Bangladesh,BGD,Lower middle income,SEARO,South Asia,1,0,0.5,1,0.5,0.5,1,0.5,0.5,0.5,1,0.5,0,0,0,1,0,1,0,9.5
+Barbados,BRB,High income,PAHO,Latin America & Caribbean,1,0.5,0.5,1,0,1,1,0,0,0.5,0,0.5,0,0,0,0,1,0.5,0,7.5
+Belarus,BLR,Upper middle income,EURO,Europe & Central Asia,0.5,1,1,1,0.5,0,1,0.5,1,0.5,1,1,0.5,1,1,0,1,1,1,14.5
+Belgium,BEL,High income,EURO,Europe & Central Asia,0,1,1,0,1,0.5,1,0.5,0,0.5,0,0.5,1,1,1,0.5,1,1,1,12.5
+Belize,BLZ,Upper middle income,PAHO,Latin America & Caribbean,1,1,0,1,0,0,0,0,0,1,0,0.5,0,0,0,0,1,0.5,DK,6
+Benin,BEN,Low income,AFRO,Sub-Saharan Africa,1,0,0.5,1,0,1,0.5,1,0,0,0,0.5,0,0,0,1,0,1,0,7.5
+Bhutan,BTN,Lower middle income,SEARO,South Asia,1,0,1,1,NA,0.5,0,0.5,0,1,1,0,0,0,0,0,0,1,0,7
+Bolivia,BOL,Lower middle income,PAHO,Latin America & Caribbean,0.5,0,0.5,0,0,0.5,1,0.5,0.5,0.5,0,1,0.5,0,0,1,0,1,0,7.5
+Bosnia and Herzegovina,BIH,Upper middle income,EURO,Europe & Central Asia,0,0.5,0.5,1,1,0,0,0.5,0,0.5,1,0.5,0.5,0,0,0.5,1,0,1,8.5
+Botswana,BWA,Upper middle income,AFRO,Sub-Saharan Africa,1,0,1,1,0,0,0,0.5,0.5,1,0,0.5,0,0,0,1,1,1,0,8.5
+Brazil,BRA,Upper middle income,PAHO,Latin America & Caribbean,1,1,0.5,1,1,1,1,1,1,0.5,0,0,0.5,0.5,1,1,1,1,0.5,14.5
+Brunei Darussalam,BRN,High income,WPRO,East Asia & Pacific,1,1,1,1,NA,1,1,0.5,1,1,1,1,0,0,0,0,1,0.5,1,13
+Bulgaria,BGR,Upper middle income,EURO,Europe & Central Asia,1,1,0.5,1,1,1,1,0.5,0,0.5,NR,NR,1,1,1,0.5,1,0.5,1,13.5
+Burkina Faso,BFA,Low income,AFRO,Sub-Saharan Africa,1,0,0.5,1,0,1,1,0.5,0,0.5,0,1,0,0,0,0.5,0,1,0,8
+Burundi,BDI,Low income,AFRO,Sub-Saharan Africa,1,0,0,1,0,1,0.5,0.5,0,0.5,0,0.5,0,0,0,0.5,0,0.5,0,6
+Cabo Verde,CPV,Lower middle income,AFRO,Sub-Saharan Africa,1,0.5,0,1,0,0,0,0.5,0.5,0.5,1,0,0,0,0,1,1,0,1,8
+Cambodia,KHM,Lower middle income,WPRO,East Asia & Pacific,1,0,1,0,0,1,1,0.5,0.5,NR,0,NR,0,0,0,0.5,0,0.5,0,6
+Cameroon,CMR,Lower middle income,AFRO,Sub-Saharan Africa,1,0,0,0,0,0.5,1,0.5,NR,0.5,0,0.5,0,0,0,0.5,0,0,0,4.5
+Canada,CAN,High income,PAHO,North America,1,1,1,1,0.5,1,1,0.5,0,0.5,NR,NR,0.5,1,1,0,1,1,1,13
+Central African Republic,CAF,Low income,AFRO,Sub-Saharan Africa,1,0,0.5,1,0,0,0,0,0,0,0,NR,0,0,0,0,0.5,0.5,0,3.5
+Chad,TCD,Low income,AFRO,Sub-Saharan Africa,1,0,0,1,0,1,1,1,0.5,0.5,0,1,0,0,0,0,0,0,0,7
+Chile,CHL,High income,PAHO,Latin America & Caribbean,1,1,0.5,1,1,1,1,0.5,0.5,0.5,0,0.5,1,1,1,0.5,1,1,1,15
+China,CHN,Upper middle income,WPRO,East Asia & Pacific,1,0.5,1,1,0.5,0,0.5,0.5,0.5,0.5,0,0,0.5,0,0,0.5,1,1,1,10
+Colombia,COL,Upper middle income,PAHO,Latin America & Caribbean,1,1,0.5,1,1,1,0.5,1,NR,0.5,0.5,0,0.5,1,0,0.5,1,1,1,13
+Comoros,COM,Lower middle income,AFRO,Sub-Saharan Africa,0,0,0.5,0,0,0.5,0.5,0,0,0.5,1,0.5,0,0,0,0.5,0,DK,0,4
+Congo,COG,Lower middle income,AFRO,Sub-Saharan Africa,0,0,0,0,0,1,0.5,1,0,0.5,0,0.5,0,0,DK,0,0,0.5,0,4
+Cook Islands,COK,Upper middle income,WPRO,East Asia & Pacific,1,1,0.5,1,0.5,0.5,0.5,0.5,0,NR,NR,NR,0,0,1,0,1,0.5,1,9
+Costa Rica ,CRI,Upper middle income,PAHO,Latin America & Caribbean,1,1,0.5,1,0.5,1,1,0.5,1,1,1,1,0.5,0.5,0,0.5,1,1,1,15
+Côte d’Ivoire,CIV,Lower middle income,AFRO,Sub-Saharan Africa,1,0,0.5,1,0,0,0,0,0.5,0.5,0.5,0.5,0,0,0,0.5,0,0.5,0,5.5
+Croatia,HRV,High income,EURO,Europe & Central Asia,0,1,0.5,0,1,0.5,1,0.5,0,0.5,0,0,1,1,0,0.5,1,1,1,10.5
+Cuba,CUB,Upper middle income,PAHO,Latin America & Caribbean,1,1,0.5,0,0.5,0.5,0.5,0,NR,0.5,0,0,0,0,0,0.5,1,1,1,8
+Cyprus,CYP,High income,EURO,Europe & Central Asia,0,0.5,0.5,0,0.5,0.5,1,0.5,1,0.5,NR,0,0,1,0,0.5,1,0,DK,7.5
+Czechia,CZE,High income,EURO,Europe & Central Asia,0.5,1,1,1,1,0.5,1,0.5,0.5,0.5,1,0.5,0.5,1,1,0.5,1,1,1,15
+Denmark,DNK,High income,EURO,Europe & Central Asia,0,1,0.5,1,0.5,0,1,0.5,0.5,0.5,0,0.5,1,1,1,0.5,1,1,1,12.5
+Djibouti,DJI,Lower middle income,EMRO,Middle East & North Africa,0,0,0,0,NR,0.5,1,1,0,0.5,1,1,0,0,0,0.5,0,0,0,5.5
+Dominica,DMA,Upper middle income,PAHO,Latin America & Caribbean,0,1,0,0,0,0,0,0,0.5,0.5,0,0.5,0,0,0,0,1,0.5,1,5
+Dominican Republic,DOM,Upper middle income,PAHO,Latin America & Caribbean,1,0.5,0.5,1,0.5,0.5,0,0,0,0.5,0,0.5,0,0,0,1,0.5,1,0.5,8
+DPR of Korea,PRK,Low income,SEARO,East Asia & Pacific,1,0,1,1,0,0.5,0,0,NR,NR,NR,NR,0,0,0,0,1,DK,0,4.5
+DR of the Congo,COD,Low income,AFRO,Sub-Saharan Africa,0.5,0,0,1,0,0.5,0.5,1,0,0.5,0,1,0,NR,0,0.5,0,DK,0,5.5
+Ecuador,ECU,Upper middle income,PAHO,Latin America & Caribbean,0,0.5,1,0,0.5,1,1,0.5,0,0.5,NR,0.5,1,0.5,1,0.5,1,0.5,0,10
+Egypt,EGY,Lower middle income,EMRO,Middle East & North Africa,1,0.5,1,1,1,1,1,0.5,0,0.5,1,1,0.5,0,0,0.5,1,0.5,0,12
+El Salvador,SLV,Lower middle income,PAHO,Latin America & Caribbean,1,0.5,1,1,0,1,1,0.5,1,0.5,0,0,0,0,0,0.5,1,1,0,10
+Equatorial Guinea,GNQ,Upper middle income,AFRO,Sub-Saharan Africa,0,0,0,0,0,0,0,0,NR,0.5,0,0,0,0,0,0,0,0,0,0.5
+Eritrea,ERI,Low income,AFRO,Sub-Saharan Africa,1,0,0.5,1,0.5,0,0.5,1,0,0.5,0,0,0,0,0,0,0,0,0,5
+Estonia,EST,High income,EURO,Europe & Central Asia,1,1,0.5,0.5,1,0,1,0.5,1,0.5,1,1,0.5,1,1,0.5,1,1,1,15
+Eswatini,SWZ,Lower middle income,AFRO,Sub-Saharan Africa,0.5,0,1,1,0.5,0,0.5,0.5,0,1,0,1,0,0,0,0,0,0,0,6
+Ethiopia,ETH,Low income,AFRO,Sub-Saharan Africa,1,0,1,1,0,0.5,0.5,0.5,0.5,0.5,0.5,0,0,0,0,0.5,1,1,0,8.5
+Fiji ,FJI,Upper middle income,WPRO,East Asia & Pacific,1,0.5,0.5,0.5,0,0.5,1,0.5,1,NR,NR,NR,0.5,0,0,0.5,1,0.5,0,8
+Finland,FIN,High income,EURO,Europe & Central Asia,1,1,1,1,1,0,1,0.5,0.5,0.5,1,0.5,1,1,1,0.5,1,1,1,15.5
+France,FRA,High income,EURO,Europe & Central Asia,0.5,1,0.5,1,1,0.5,1,0.5,1,0.5,1,0.5,1,1,1,0.5,1,1,1,15.5
+Gabon,GAB,Upper middle income,AFRO,Sub-Saharan Africa,1,0,0,0,0,0.5,0.5,0.5,0,0,0,0.5,0,0,0,1,0,0,0,4
+Gambia,GMB,Low income,AFRO,Sub-Saharan Africa,0.5,0,0.5,0,0,1,0.5,1,0.5,0.5,0,0.5,0,0,0,1,0,0,0,6
+Georgia,GEO,Upper middle income,EURO,Europe & Central Asia,1,0.5,1,1,0.5,0.5,1,0.5,1,0.5,1,0.5,0.5,0.5,1,1,1,1,0.5,14.5
+Germany,DEU,High income,EURO,Europe & Central Asia,0.5,1,0.5,1,0.5,0,1,0.5,1,0,0,0,1,1,1,0.5,1,1,1,12.5
+Ghana,GHA,Lower middle income,AFRO,Sub-Saharan Africa,0,0,0.5,0,0,0.5,0.5,1,0.5,0,0,NR,0,0,0,1,0,1,DK,5
+Greece,GRC,High income,EURO,Europe & Central Asia,0,1,1,0,1,1,1,0.5,0,0.5,0,0.5,0.5,1,0,0.5,1,1,DK,10.5
+Grenada,GRD,Upper middle income,PAHO,Latin America & Caribbean,1,1,0.5,0,0,0,0,0,0,0.5,0,0.5,0,0,0,0,1,0,0,4.5
+Guatemala,GTM,Upper middle income,PAHO,Latin America & Caribbean,1,1,1,1,0,1,0,0,NR,0.5,0,1,0.5,0,0,0.5,1,1,0,9.5
+Guinea,GIN,Low income,AFRO,Sub-Saharan Africa,0,0,0,0,NR,0.5,0.5,1,0,0.5,1,1,0,0,0,0,0,0.5,0,5
+Guinea-Bissau,GNB,Low income,AFRO,Sub-Saharan Africa,0,0,0,0,0,0,0,0,0,0.5,0,0,0,0,0,0.5,0,0,0,1
+Guyana,GUY,Upper middle income,PAHO,Latin America & Caribbean,1,1,0.5,1,0,1,1,1,0,0.5,0,0.5,0,0,0,0,1,0.5,0,9
+Haiti,HTI,Low income,PAHO,Latin America & Caribbean,0,0,0.5,0,NR,0,0,0,0,NR,NR,NR,0,0,0,0,0,1,0,1.5
+Honduras,HND,Lower middle income,PAHO,Latin America & Caribbean,1,0.5,0,0,0,1,1,0.5,0.5,1,0,1,0,0,0,0.5,1,0.5,0,8.5
+Hungary,HUN,High income,EURO,Europe & Central Asia,0,1,0.5,0,0.5,0.5,1,0.5,0,NR,NR,0,0.5,1,1,0.5,1,1,0.5,9.5
+Iceland,ISL,High income,EURO,Europe & Central Asia,0,1,0.5,0,0.5,0,0.5,0.5,0,1,1,1,0.5,1,1,0.5,1,1,1,12
+India,IND,Lower middle income,SEARO,South Asia,1,0.5,0.5,1,0.5,0.5,1,0.5,0.5,0.5,NR,NR,1,1,1,1,1,1,1,13.5
+Indonesia,IDN,Lower middle income,SEARO,East Asia & Pacific,1,0,0.5,1,0.5,0.5,0.5,0,1,0.5,1,1,0,0,0,0.5,1,1,0,10
+Iran,IRN,Upper middle income,EMRO,Middle East & North Africa,1,0.5,1,1,0,1,1,1,0.5,1,1,1,1,1,1,0.5,0.5,1,1,16
+Iraq,IRQ,Upper middle income,EMRO,Middle East & North Africa,1,0.5,0.5,1,0,0.5,0.5,0.5,1,0.5,NR,0.5,0.5,DK,0,0.5,1,0.5,0.5,9.5
+Ireland,IRL,High income,EURO,Europe & Central Asia,0.5,1,0.5,1,1,1,1,0.5,1,0.5,0,0.5,1,1,1,0.5,1,1,1,15
+Israel,ISR,High income,EURO,Middle East & North Africa,0,1,0.5,1,1,0.5,0.5,0,0,0.5,1,0.5,1,1,1,0,1,0,1,11.5
+Italy,ITA,High income,EURO,Europe & Central Asia,0.5,1,0.5,1,1,0.5,1,0.5,1,0.5,0.5,0,1,1,1,0.5,1,0.5,0,13
+Jamaica,JAM,Upper middle income,PAHO,Latin America & Caribbean,0,1,0.5,0,0,1,1,0,NR,0.5,0,1,0.5,0.5,0,0,1,0.5,0,7.5
+Japan,JPN,High income,WPRO,East Asia & Pacific,1,1,1,1,0.5,0.5,0.5,0,0.5,0.5,0,0.5,0,0,0,0,DK,DK,DK,7
+Jordan,JOR,Upper middle income,EMRO,Middle East & North Africa,1,0.5,0.5,0,1,0.5,0.5,0.5,1,0.5,1,0.5,0.5,0.5,0,0.5,0,0.5,0,9.5
+Kazakhstan,KAZ,Upper middle income,EURO,Europe & Central Asia,1,1,1,1,0.5,0.5,1,0.5,NR,0.5,1,0.5,1,1,1,0.5,1,1,1,15
+Kenya,KEN,Lower middle income,AFRO,Sub-Saharan Africa,1,0,1,1,0.5,0,0.5,1,0,0.5,0,1,0,0.5,0,0.5,0,1,0,8.5
+Kiribati,KIR,Lower middle income,WPRO,East Asia & Pacific,0.5,1,0.5,1,0,0.5,0.5,1,0,0.5,0,0.5,0,0,1,0,0.5,0.5,1,9
+Kuwait,KWT,High income,EMRO,Middle East & North Africa,1,0.5,0.5,1,0,0.5,0.5,1,0,NR,NR,NR,1,1,0,1,0.5,1,1,10.5
+Kyrgyzstan,KGZ,Lower middle income,EURO,Europe & Central Asia,1,1,0.5,1,0,0.5,1,0.5,0,0.5,1,1,0,1,0,0.5,1,1,0,11.5
+Lao PDR,LAO,Lower middle income,WPRO,East Asia & Pacific,0.5,0,0.5,1,0,1,1,0.5,NR,0.5,0,0,0,0,0,0.5,0,1,0,6.5
+Latvia,LVA,High income,EURO,Europe & Central Asia,1,1,0.5,1,1,0.5,1,0.5,0,0.5,1,0.5,0.5,1,1,0.5,1,0.5,1,14
+Lebanon,LBN,Upper middle income,EMRO,Middle East & North Africa,0,0,0.5,0.5,0,1,0.5,0.5,0.5,0.5,0,0,0,0,0,1,0,1,1,7
+Lesotho,LSO,Lower middle income,AFRO,Sub-Saharan Africa,1,0,0.5,1,0.5,0,0,0,0.5,0.5,0,0,0,0,0,0,0,1,0,5
+Liberia,LBR,Low income,AFRO,Sub-Saharan Africa,1,0,0.5,0,0,0,0,0,0,0.5,1,1,0,0,0,0,0,0.5,0,4.5
+Libya,LBY,Upper middle income,EMRO,Middle East & North Africa,0,0,0,0,0,1,0,1,0,1,1,1,0,0,0,0,0,0.5,0,5.5
+Lithuania,LTU,High income,EURO,Europe & Central Asia,1,1,0.5,1,0.5,0.5,1,0.5,0,0.5,1,1,1,1,1,0.5,1,1,1,15
+Luxembourg,LUX,High income,EURO,Europe & Central Asia,0,1,1,0,0.5,0.5,1,0.5,1,0.5,NR,0.5,0,1,0,0.5,1,0.5,DK,9.5
+Madagascar,MDG,Low income,AFRO,Sub-Saharan Africa,0,0,0,1,1,1,1,1,0,0.5,0.5,0.5,0,0,0,1,0.5,1,0,9
+Malawi,MWI,Low income,AFRO,Sub-Saharan Africa,0,0,0.5,0,NR,0,0,0,0,1,0,0,0,DK,0,0.5,0,1,0,3
+Malaysia,MYS,Upper middle income,WPRO,East Asia & Pacific,1,0.5,1,0.5,0.5,0,1,0.5,NR,0.5,0.5,0.5,1,0,1,0,1,1,1,11.5
+Maldives,MDV,Upper middle income,SEARO,South Asia,1,0.5,0.5,1,0.5,0.5,0.5,1,0,1,1,1,0,0,1,1,1,1,1,13.5
+Mali,MLI,Low income,AFRO,Sub-Saharan Africa,0,0,0.5,0,0,0,0.5,0.5,0,0.5,0,0,0,0,0,0.5,0,0,0,2.5
+Malta,MLT,High income,EURO,Middle East & North Africa,1,1,0.5,1,1,1,1,0.5,NR,0.5,0,0.5,0.5,1,1,0.5,1,0,1,13
+Marshall Islands,MHL,Upper middle income,WPRO,East Asia & Pacific,0,0,0.5,0,0.5,1,0,0,NR,0.5,0,1,0,0,0,0,0.5,0,0,4
+Mauritania,MRT,Lower middle income,AFRO,Sub-Saharan Africa,1,0,0,1,0,0,0.5,0.5,0,1,1,1,0,DK,0,0,0,0,0,6
+Mauritius,MUS,Upper middle income,AFRO,Sub-Saharan Africa,0.5,1,0.5,0,1,0.5,1,1,0,0.5,1,0.5,0,0,0,0,0.5,0.5,0.5,9
+Mexico,MEX,Upper middle income,PAHO,Latin America & Caribbean,0,1,0.5,0,0.5,0.5,1,0,NR,0.5,0,0.5,0.5,1,1,0.5,1,1,0,9.5
+Micronesia,FSM,Lower middle income,WPRO,East Asia & Pacific,0,0,0.5,0.5,0,0.5,0,0.5,0,0.5,0.5,0.5,0,0,0,0,0.5,0.5,1,5.5
+Monaco,MCO,High income,EURO,Europe & Central Asia,0,0.5,0,0,NR,0.5,0,0,NR,0.5,NR,0,0,0,0,0.5,0.5,0,1,3.5
+Mongolia,MNG,Lower middle income,WPRO,East Asia & Pacific,1,0.5,1,1,0,0.5,1,1,NR,0.5,0,0.5,1,0.5,1,0.5,0,1,0.5,11.5
+Montenegro,MNE,Upper middle income,EURO,Europe & Central Asia,1,0.5,0.5,1,1,0.5,0.5,0.5,0,0.5,1,0,0.5,0,0,0,1,DK,0,8.5
+Morocco,MAR,Lower middle income,EMRO,Middle East & North Africa,1,0.5,1,1,0.5,0.5,0,0.5,0.5,0.5,0.5,0.5,0.5,1,1,0,0.5,0.5,0,10.5
+Mozambique,MOZ,Low income,AFRO,Sub-Saharan Africa,1,0,0.5,1,0,0,0,0.5,0,0.5,NR,NR,0,0,0,1,0,0.5,0,5
+Myanmar,MMR,Lower middle income,SEARO,East Asia & Pacific,1,0,0.5,1,0,0.5,0.5,0.5,1,0.5,NR,NR,0,0,0,0.5,0,1,0,7
+Namibia,NAM,Upper middle income,AFRO,Sub-Saharan Africa,1,0,0.5,0,0,1,1,0.5,0.5,1,0,0.5,0,0,0,0,0,0,0,6
+Nauru,NRU,Upper middle income,WPRO,East Asia & Pacific,1,0,1,1,0,1,0.5,0.5,NR,NR,NR,NR,0,0,0,0,0,0.5,0.5,6
+Nepal,NPL,Low income,SEARO,South Asia,1,0,1,1,0,1,1,1,NR,0.5,0,1,0,0,0,1,0.5,0.5,0,9.5
+Netherlands,NLD,High income,EURO,Europe & Central Asia,0.5,1,0.5,0,0.5,0,1,0.5,0.5,0.5,0,0.5,1,1,1,0.5,1,1,1,12
+New Zealand,NZL,High income,WPRO,East Asia & Pacific,0,1,0.5,0,1,1,1,0.5,1,0.5,0,1,DK,0,1,0,0,1,1,10.5
+Nicaragua,NIC,Lower middle income,PAHO,Latin America & Caribbean,0,0.5,0.5,DK,0,0.5,0.5,0,0,0.5,0.5,0,0,0,0,0.5,0,1,0,4.5
+Niger,NER,Low income,AFRO,Sub-Saharan Africa,1,0,0,1,0,0.5,0.5,1,0,0.5,0.5,0.5,0,0,0,0.5,0,0,0,6
+Nigeria,NGA,Lower middle income,AFRO,Sub-Saharan Africa,1,0,0,0,0,0,0.5,1,0,0.5,0,1,0,0,0,0.5,0,0,0,4.5
+Niue,NIU,Upper middle income,WPRO,East Asia & Pacific,0,0,0.5,0,1,1,0.5,1,0,NR,NR,NR,0,0,0,0,0,0.5,0,4.5
+North Macedonia,MKD,Upper middle income,EURO,Europe & Central Asia,0,0.5,0.5,0,1,1,0.5,0.5,0,0.5,0,0.5,0,0,0,0.5,1,1,0,7.5
+Norway,NOR,High income,EURO,Europe & Central Asia,1,1,1,1,0.5,1,1,0.5,1,0.5,1,1,1,1,1,0.5,1,1,1,17
+Oman,OMN,High income,EMRO,Middle East & North Africa,1,0.5,0.5,1,0,0,0.5,0.5,0,0.5,0.5,0.5,1,1,1,0.5,1,1,1,12
+Pakistan,PAK,Lower middle income,EMRO,South Asia,0,0,0.5,0,0.5,1,1,0.5,1,1,0.5,1,0,0,0,1,0,0,0,8
+Palau,PLW,High income,WPRO,East Asia & Pacific,0.5,0,0.5,0.5,0.5,0.5,0,0.5,0.5,NR,NR,NR,0.5,0.5,0,1,0.5,1,1,8
+Panama,PAN,High income,PAHO,Latin America & Caribbean,0,1,0.5,1,0.5,1,1,1,1,0.5,0,0.5,0,0,0,1,1,0.5,0,10.5
+Papua New Guinea,PNG,Lower middle income,WPRO,East Asia & Pacific,0.5,0,0,0.5,0.5,1,0.5,0.5,0,0.5,0,0.5,0,0,0,0.5,0.5,0.5,0,6
+Paraguay,PRY,Upper middle income,PAHO,Latin America & Caribbean,1,0.5,0.5,1,0,0.5,0.5,0.5,0,0.5,0.5,1,0.5,0,0,0.5,0,DK,0,7.5
+Peru,PER,Upper middle income,PAHO,Latin America & Caribbean,0,0.5,0.5,0.5,0,1,1,0,NR,0.5,1,0.5,0.5,1,1,1,1,0.5,0,10.5
+Philippines ,PHL,Lower middle income,WPRO,East Asia & Pacific,1,1,0.5,1,0.5,0.5,1,0.5,0.5,0.5,0,1,0,0,1,1,0.5,0,0,10.5
+Poland,POL,High income,EURO,Europe & Central Asia,0,1,0.5,0.5,1,0.5,1,0.5,0,0.5,1,0,1,1,1,0.5,1,DK,1,12
+Portugal,PRT,High income,EURO,Europe & Central Asia,1,1,1,1,0.5,0.5,1,0.5,0.5,0.5,1,0.5,0.5,1,1,0.5,1,1,1,15
+Qatar,QAT,High income,EMRO,Middle East & North Africa,1,0.5,0.5,1,0,0,0.5,1,1,1,0,0,0.5,1,0,0,1,1,0,10
+Republic of Korea,KOR,High income,WPRO,East Asia & Pacific,1,1,1,0.5,0.5,0,0.5,0,1,0.5,1,0.5,1,0.5,1,0.5,1,0.5,1,13
+Republic of Moldova,MDA,Lower middle income,EURO,Europe & Central Asia,1,1,0.5,1,0.5,0.5,1,1,1,0.5,0.5,0,1,1,1,0.5,1,1,1,15
+Romania,ROU,Upper middle income,EURO,Europe & Central Asia,0,1,0.5,1,0.5,1,1,0.5,0,0.5,0.5,0.5,0,1,1,0.5,1,1,0,11.5
+Russian Federation,RUS,Upper middle income,EURO,Europe & Central Asia,1,1,1,0.5,0.5,1,1,1,0,0.5,1,0.5,0.5,1,0,0.5,1,1,1,14
+Rwanda,RWA,Low income,AFRO,Sub-Saharan Africa,0,0,0.5,0,0.5,0,0.5,0,0.5,0.5,1,0,0,0,0,0.5,1,1,0,6
+Saint Kitts and Nevis,KNA,High income,PAHO,Latin America & Caribbean,0,1,0,0,0,0,0,0,0,1,0,1,0,0,0,0,1,1,0,5
+Saint Lucia,LCA,Upper middle income,PAHO,Latin America & Caribbean,0,1,0.5,1,0.5,0,1,0,1,0.5,0,0.5,0,0,0,0,1,0.5,0.5,8
+Saint Vincent and the Grenadines,VCT,Upper middle income,PAHO,Latin America & Caribbean,1,1,0.5,1,0,0,0,0,0,1,0,0,0.5,0,0,0,0.5,0.5,0,6
+Samoa,WSM,Upper middle income,WPRO,East Asia & Pacific,0,0,0.5,1,0,0.5,1,0.5,0.5,1,0,1,0.5,0,0,0,1,NR,0,7.5
+San Marino,SMR,High income,EURO,Europe & Central Asia,0,1,0,1,NR,0.5,0,0.5,0,0,0,0,1,0.5,0,0.5,0.5,0.5,1,7
+Sao Tome and Principe,STP,Lower middle income,AFRO,Sub-Saharan Africa,0,0,0.5,0,0,0,0,0.5,0,NR,NR,NR,0,0,0,0,0,0.5,0,1.5
+Saudi Arabia,SAU,High income,EMRO,Middle East & North Africa,1,0.5,0.5,1,0.5,0.5,1,1,0.5,1,1,1,1,1,0,0.5,0.5,1,1,14.5
+Senegal,SEN,Lower middle income,AFRO,Sub-Saharan Africa,0.5,0,1,1,0,0.5,1,1,1,0.5,0.5,0.5,0,0,0,0.5,0,1,0,9
+Serbia,SRB,Upper middle income,EURO,Europe & Central Asia,0,1,0.5,1,1,0.5,0.5,0.5,0,0.5,NR,0.5,0,0,0,0.5,1,1,1,9.5
+Seychelles,SYC,High income,AFRO,Sub-Saharan Africa,1,1,0.5,1,0.5,1,1,1,1,0.5,0,1,0,0,0,0.5,1,0.5,1,12.5
+Sierra Leone,SLE,Low income,AFRO,Sub-Saharan Africa,0,0,0,0,0,0,0,0,0,0.5,0,0.5,0,0,0,0,0,0,0,1
+Singapore,SGP,High income,WPRO,East Asia & Pacific,0.5,1,0.5,0.5,0.5,0.5,1,0.5,0.5,0.5,0,0.5,1,1,1,0,1,1,DK,11.5
+Slovakia,SVK,High income,EURO,Europe & Central Asia,1,1,0.5,0.5,1,0.5,1,0.5,0,0.5,0,0.5,0.5,1,0,0.5,1,0.5,0,10.5
+Slovenia,SVN,High income,EURO,Europe & Central Asia,1,1,0.5,1,1,0.5,1,1,0.5,0.5,1,0,0.5,1,1,0.5,1,1,1,15
+Solomon Islands,SLB,Lower middle income,WPRO,East Asia & Pacific,1,0,1,1,0,0.5,1,0.5,0,NR,NR,NR,0,0,0,0.5,0,0.5,0,6
+Somalia,SOM,Low income,EMRO,Sub-Saharan Africa,0,0,0.5,0,0,0,0,0,0,1,1,1,0,0,0,0,0,0,0,3.5
+South Africa,ZAF,Upper middle income,AFRO,Sub-Saharan Africa,1,1,0.5,0,0.5,0,0,0.5,0,0.5,0,1,0.5,0.5,0,1,1,1,DK,9
+South Sudan,SSD,Low income,EMRO,Sub-Saharan Africa,1,0,0,0,NR,0,0,0,0,1,0,0,0,0,0,0,0,0,0,2
+Spain,ESP,High income,EURO,Europe & Central Asia,0,1,0.5,0,1,1,1,1,0,0.5,0.5,0,0.5,1,1,0.5,1,1,1,12.5
+Sri Lanka,LKA,Upper middle income,SEARO,South Asia,1,0,1,1,0.5,0.5,1,0.5,NR,1,1,0.5,1,0,1,1,0,1,1,13
+Sudan,SDN,Lower middle income,EMRO,Sub-Saharan Africa,1,0,1,0.5,0.5,0,0,0.5,0,1,1,1,0,0,0,0.5,0,1,0,8
+Suriname,SUR,Upper middle income,PAHO,Latin America & Caribbean,1,0.5,0.5,1,0,1,1,1,0,0,0,1,0,0,0,0,0,0.5,DK,7.5
+Sweden,SWE,High income,EURO,Europe & Central Asia,0,1,0.5,0,0.5,0,1,0.5,0,0.5,1,0.5,0.5,1,1,0.5,1,1,1,11.5
+Switzerland,CHE,High income,EURO,Europe & Central Asia,0,1,0.5,0,0.5,0,0.5,0,1,0,1,0,0.5,1,1,0.5,1,1,1,10.5
+Syrian Arab Republic,SYR,Low income,EMRO,Middle East & North Africa,0,0,0.5,0,0,0.5,0,0.5,0,0.5,0,0.5,0,0,0,0.5,0,0.5,0.5,4
+Tajikistan,TJK,Low income,EURO,Europe & Central Asia,1,0.5,1,1,0,1,0.5,0.5,0,0.5,0.5,0.5,0,0,1,0.5,0,1,0,9.5
+Thailand,THA,Upper middle income,SEARO,East Asia & Pacific,1,0.5,0.5,1,1,1,1,0.5,0.5,1,1,0,1,0.5,1,0.5,1,1,1,15
+Timor Leste,TLS,Lower middle income,SEARO,East Asia & Pacific,1,0,0.5,1,0,0.5,1,0.5,1,0.5,0,0.5,0.5,1,0,0,0,1,0,9
+Togo,TGO,Low income,AFRO,Sub-Saharan Africa,1,0,0.5,0,0,0.5,0.5,1,1,0.5,0,0.5,0,0,0,0,0,0.5,0,6
+Tonga ,TON,Upper middle income,WPRO,East Asia & Pacific,1,0,1,1,0.5,0.5,0.5,0.5,1,1,0,0.5,0,0,0,0,1,1,1,10.5
+Trinidad and Tobago,TTO,High income,PAHO,Latin America & Caribbean,1,0.5,0.5,0.5,0,1,1,0,0,0.5,0,0.5,0,0,0,0.5,1,DK,1,8
+Tunisia,TUN,Lower middle income,EMRO,Middle East & North Africa,1,0.5,1,1,0.5,0,0.5,0.5,0.5,0.5,NR,0,1,1,0,0.5,0.5,0,0,9
+Turkey,TUR,Upper middle income,EURO,Europe & Central Asia,1,1,1,1,1,1,1,1,1,0.5,1,0.5,1,1,1,0.5,1,0.5,1,17
+Turkmenistan,TKM,Upper middle income,EURO,Europe & Central Asia,1,1,1,1,0,1,1,0.5,1,1,1,1,0.5,1,1,0.5,1,1,0.5,16
+Tuvalu,TUV,Upper middle income,WPRO,East Asia & Pacific,0.5,0,0.5,0,0,0.5,0.5,1,0,NR,NR,NR,0,0,0,0,0.5,0.5,1,5
+Uganda,UGA,Low income,AFRO,Sub-Saharan Africa,0,0,1,0,0,1,0.5,1,0.5,0.5,0,1,0,0,0,1,1,1,0,8.5
+Ukraine,UKR,Lower middle income,EURO,Europe & Central Asia,1,1,1,1,0.5,0.5,1,0.5,0.5,0.5,1,0.5,0,0,0,0.5,1,1,0.5,12
+United Arab Emirates,ARE,High income,EMRO,Middle East & North Africa,1,0.5,1,1,0.5,0.5,0.5,1,0,0.5,1,0,1,1,0,0.5,1,1,1,13
+United Kingdom,GBR,High income,EURO,Europe & Central Asia,0.5,1,1,1,1,1,1,0.5,1,NR,0,0.5,1,1,1,0.5,1,1,1,15
+United Republic of Tanzania,TZA,Low income,AFRO,Sub-Saharan Africa,1,0,0.5,1,0,0,0.5,0.5,0,0.5,0,0.5,0,DK,0,1,0,1,0,6.5
+United States of America,USA,High income,PAHO,North America,1,1,1,1,0,0,0.5,0,1,0.5,0,0.5,0.5,1,1,0,1,1,DK,11
+Uruguay,URY,High income,PAHO,Latin America & Caribbean,1,1,0.5,1,0.5,1,1,1,NR,0.5,0,0,1,0.5,1,0.5,0,0.5,DK,11
+Uzbekistan,UZB,Lower middle income,EURO,Europe & Central Asia,1,1,1,1,0,0,0.5,0.5,0,0.5,1,0.5,1,0.5,0,0.5,1,1,0,11
+Vanuatu,VUT,Lower middle income,WPRO,East Asia & Pacific,1,0,0.5,1,0.5,0,1,1,0,1,0,1,0,0,0,0,0,0.5,0,7.5
+Venezuela,VEN,Upper middle income,PAHO,Latin America & Caribbean,1,1,0.5,0,0.5,1,1,0,0,0.5,0,0.5,0,0,0,1,0.5,1,0,8.5
+Viet Nam,VNM,Lower middle income,WPRO,East Asia & Pacific,1,0,1,1,0,0.5,1,0.5,1,0.5,0.5,0.5,1,0,0,1,1,1,0,11.5
+Yemen,YEM,Low income,EMRO,Middle East & North Africa,0,0,0,0,0.5,0.5,0.5,1,0.5,1,1,1,0,0,0,1,0,0,0,7
+Zambia,ZMB,Lower middle income,AFRO,Sub-Saharan Africa,0,0,0.5,0,0,0.5,0,0,0,1,0,0,0,0,0,0.5,1,1,0,4.5
+Zimbabwe,ZWE,Lower middle income,AFRO,Sub-Saharan Africa,0,0,0,0,0,0.5,0,0,0,0.5,0,0,0,0,0,1,0,0.5,0,2.5
