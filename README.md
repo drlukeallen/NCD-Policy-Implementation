@@ -10,4 +10,4 @@ Data and code not to be used or cited without permission of authors
 3. R code produce results for multiplicative interaction models (Interflex) and lasso procedure (glmmLasso).
 4. Stata do file produces all other results.
 
-Note: to ensureparison accross all three years the policy data in dta file do not include the half-points and tobacco mass media policy that were added to the 2017 and 2020 reports.
+Note: to ensure comparison accross all three years the policy data in dta file do not include the tobacco mass media policy and half-points that were added to the 2017 and 2020 reports.
