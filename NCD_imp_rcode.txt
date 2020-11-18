@@ -117,6 +117,7 @@ Delta.start <- c(as.numeric(PQL$coef$fixed),
                 as.numeric(t(PQL$coef$random$iso3)))
 Q.start <- as.numeric(VarCorr(PQL)[1,1])
 
+#Select optimal lambda
 for(j in 1:length(lambda))
   {
     print(paste("Iteration ", j, sep=""))
@@ -134,7 +135,7 @@ control=list(start = Delta.start,  q_start = Q.start)), silent = TRUE)
     
 opt<-which.min(BIC_vec)
 	
-#Run glmmLasso
+#Run glmmLasso using optimal lamda
 lm1 <- glmmLasso(total_imp ~ cpi_indexaa + ln_ghe_gdp_2015_ghe + hypertension_average + obese_average + smoking_prevalence + alcohol_consumption + ln_tax_gdp_hf + v2x_mpi + v2x_corr +  ln_ldi_pc_2015 + ln_urban_un + ln_pop65_pct_wb + risk_target_ncds_2015 + ncd_burden_who_2015 + ln_mx_warterror_10yr + fedu_yrs_pc_1519 + uhc_index_2015 + ln_oilres_regav_2015 + muslim00 + dist_coast + elf1 + as.factor(legor_fra) + as.factor(legor_gbr) + as.factor(legor_sca) + as.factor(legor_soc) + as.factor(cont_africa) + as.factor(cont_asia) + as.factor(cont_europe) + as.factor(cont_south_america) + as.factor(cont_north_america) + as.factor(yr1)  + as.factor(yr3), rnd = list(iso3 =~1), family = family,lambda=lambda[opt], data = mydata, switch.NR = TRUE, final.re = TRUE, control=list(start = Delta.start, q_start = Q.start))
 
 summary(lm1)
