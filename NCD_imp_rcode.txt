@@ -19,7 +19,7 @@ out <- interflex(Y = "total_imp", D = "v2x_mpi", X = "cpi_indexaa_rescale", Z = 
 out$graph
 
 
-##REPLICATION CODE FOR LASSO MODEL USING glmmLasso
+##REPLICATION CODE FOR LASSO PROCEDURE USING glmmLasso
 #Install and load glmmLasso (v. 1.5.1)
 install.packages("glmmLasso")
 library(glmmLasso)
