@@ -3,7 +3,7 @@ Data and replication code for regression analyses for "Implementation of non-com
 
 Authors: Luke Allen, Hampus Holmer, and Simon Wigley                                                                                                  
 Draft: 18 Nov 2020                                                                                                                                    
-Data and code not to be used or cited without permission of authors
+*Data and code not to be used or cited without permission of authors*
 
 1. csv files contain raw implementation data from Noncommunicable Diseases Progress Monitors for 2015, 2017, and 2020
 2. Stata dta file contains panel data for all regression analyses and the lasso analysis
