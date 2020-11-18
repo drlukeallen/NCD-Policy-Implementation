@@ -1,0 +1,152 @@
+##REPLICATION CODE FOR MULTIPLICATIVE MODELS USING INTERFLEX
+#Install and load Interflex
+install.packages('devtools', repos = 'http://cran.us.r-project.org')
+devtools::install_github('xuyiqing/interflex')
+library(interflex)
+
+
+#Retrieve panel data
+library(foreign)
+mydata <- read.dta("ncd_imp_panel.dta")
+
+#Non-linear interaction model (figure 8)
+out <- interflex(Y = "total_imp", D = "v2x_mpi", X = "cpi_indexaa_rescale", Z = c("ln_pop65_pct_wb", "uhc_index_2015", "v2x_corr", "ln_mx_warterror_10yr", "ln_tax_gdp_hf", "obese_average", "alcohol_consumption", "smoking_prevalence", "hypertension_average", "ln_ldi_pc_2015", "ln_ghe_gdp_2015_ghe", "ln_oilres_regav_2015", "fedu_yrs_pc_1519", "ln_urban_un", "risk_target_ncds_2015", "ncd_burden_who_2015", "legor_fra", "legor_gbr", "legor_soc", "legor_sca", "muslim00", "dist_coast", "elf1", "cont_asia", "cont_europe", "cont_africa", "cont_south_america", "yr1", "yr3"), data = mydata, estimator = 'kernel', bw = 0.85, vartype = "robust", nboots = 1000, na.rm = TRUE, parallel = TRUE, cores = 4, xlab = "Corporate Permeation Index", ylab = "Marginal effect of democracy on NCD policy implementation", full.moderate = TRUE)
+out$graph
+
+
+#Linear interaction model with bins (Appendix figure A.x)
+out <- interflex(Y = "total_imp", D = "v2x_mpi", X = "cpi_indexaa_rescale", Z = c("ln_pop65_pct_wb", "uhc_index_2015", "v2x_corr", "ln_mx_warterror_10yr", "ln_tax_gdp_hf", "obese_average", "alcohol_consumption", "smoking_prevalence", "hypertension_average", "ln_ldi_pc_2015", "ln_ghe_gdp_2015_ghe", "ln_oilres_regav_2015", "fedu_yrs_pc_1519", "ln_urban_un", "risk_target_ncds_2015", "ncd_burden_who_2015", "legor_fra", "legor_gbr", "legor_soc", "legor_sca", "muslim00", "dist_coast", "elf1", "cont_asia", "cont_europe", "cont_africa", "cont_south_america", "yr1", "yr3"), data = mydata, estimator = 'binning', vartype = "robust", nboots = 1000, na.rm = TRUE, parallel = TRUE, cores = 4, xlab = "Corporate Permeation Index", ylab = "Marginal effect of democracy on NCD policy implementation", full.moderate = TRUE)
+out$graph
+
+
+##REPLICATION CODE FOR LASSO MODEL USING glmmLasso
+#Install and load glmmLasso
+install.packages("glmmLasso")
+library(glmmLasso)
+
+#Retrieve panel data
+library(foreign)
+mydata <- read.dta("ncd_imp_panel.dta")
+
+#Drop unused variables
+myvars <- names(mydata) %in% c("ihme_country_code", "un_country_code", "who_country_code", "who_country_name",  "transparencyindex", "dd_2015, dd_mode_201519", "gdppc_2005_int_ihme", "ln_gdppc_2005_int_ihme", "ictd_taxrev_inclsc_2015", "ictd_taxrev_exclsc_2015", "uhc_scaindex_2015", "ba_all_label_iso3", "ba_comm_label_iso3", "dd_2015", "dd_mode_201519") 
+
+mydata <- mydata[!myvars]
+View(mydata)
+
+#Drop missing cases
+mydata <- na.omit(mydata)
+View(mydata)
+
+#Standardize all variables
+mydata$total_imp <-scale(mydata$total_imp)
+mydata$comm_imp <-scale(mydata$comm_imp)
+mydata$no_imp <-scale(mydata$no_imp)
+mydata$risk_policies <-scale(mydata$risk_policies)
+mydata$paper_policies <-scale(mydata$paper_policies)
+
+mydata$v2x_mpi <-scale(mydata$ v2x_mpi)
+mydata$v2x_corr <-scale(mydata$v2x_corr)
+mydata$cpi_indexaa <-scale(mydata$cpi_indexaa)
+mydata$ln_ldi_pc_2015 <-scale(mydata$ln_ldi_pc_2015)
+mydata$ln_urban_un<-scale(mydata$ln_urban_un)
+mydata$ln_pop65_pct_wb<-scale(mydata$ln_pop65_pct_wb)
+mydata$risk_target_ncds_2015<-scale(mydata$risk_target_ncds_2015)
+mydata$ncd_burden_who_2015<-scale(mydata$ncd_burden_who_2015)
+mydata$ln_mx_warterror_10yr<-scale(mydata$ln_mx_warterror_10yr)
+mydata$fedu_yrs_pc_1519<-scale(mydata$fedu_yrs_pc_1519)
+mydata$uhc_index_2015<-scale(mydata$uhc_index_2015)
+mydata$ln_oilres_regav_2015<-scale(mydata$ln_oilres_regav_2015)
+mydata$alcohol_consumption<-scale(mydata$alcohol_consumption)
+mydata$obese_average<-scale(mydata$obese_average)
+mydata$smoking_prevalence<-scale(mydata$smoking_prevalence)
+mydata$hypertension_average<-scale(mydata$hypertension_average)
+mydata$ln_ghe_gdp_2015_ghe<-scale(mydata$ln_ghe_gdp_2015_ghe)
+mydata$ln_tax_gdp_hf<-scale(mydata$ln_tax_gdp_hf)
+mydata$muslim00<-scale(mydata$muslim00)
+mydata$dist_coast<-scale(mydata$dist_coast)
+mydata$elf1<-scale(mydata$elf1)
+mydata$legor_fra<-scale(mydata$legor_fra)
+mydata$legor_deu<-scale(mydata$legor_deu)
+mydata$legor_gbr<-scale(mydata$legor_gbr)
+mydata$legor_sca<-scale(mydata$legor_sca)
+mydata$legor_soc<-scale(mydata$legor_soc)
+mydata$cont_africa<-scale(mydata$cont_africa)
+mydata$cont_asia<-scale(mydata$cont_asia)
+mydata$cont_oceania<-scale(mydata$cont_oceania)
+mydata$cont_europe<-scale(mydata$cont_europe)
+mydata$cont_south_america<-scale(mydata$cont_south_america)
+mydata$cont_north_america<-scale(mydata$cont_north_america)
+
+mydata$yr1<-scale(mydata$yr1)
+mydata$yr2<-scale(mydata$yr2)
+mydata$yr3<-scale(mydata$yr3)
+
+mydata<-data.frame(mydata)
+#Classify factor variables
+mydata$country1 <- factor(mydata$country1)
+mydata$iso3 <- factor(mydata$iso3)
+mydata$yr1 <- factor(mydata$yr1)
+mydata$yr2 <- factor(mydata$yr2)
+mydata$yr3 <- factor(mydata$yr3)
+mydata$legor_gbr <- factor(mydata$legor_gbr)
+mydata$legor_fra <- factor(mydata$legor_fra)
+mydata$legor_deu <- factor(mydata$legor_deu)
+mydata$legor_sca <- factor(mydata$legor_sca)
+mydata$legor_soc <- factor(mydata$legor_soc)
+mydata$cont_asia <- factor(mydata$cont_asia)
+mydata$cont_europe <- factor(mydata$cont_europe)
+mydata$cont_oceania <- factor(mydata$cont_oceania)
+mydata$cont_south_america <- factor(mydata$cont_south_america)
+mydata$cont_north_america <- factor(mydata$cont_north_america)
+
+
+#Using BIC to determine the optimal tuning parameter lambda
+lambda <- seq(500, 0, by=-5)
+family = gaussian(link = "identity")
+BIC_vec <- rep(Inf, length(lambda))
+
+#Fit good starting model
+library(MASS); library(nlme)
+
+PQL <- glmmPQL(total_imp ~ 1,
+             random = ~1|iso3,
+             family = gaussian(link = "identity"),
+             data = mydata)
+
+Delta.start <- c(as.numeric(PQL$coef$fixed),
+                rep(0, 35), 
+                as.numeric(t(PQL$coef$random$iso3)))
+Q.start <- as.numeric(VarCorr(PQL)[1,1])
+
+for(j in 1:length(lambda))
+  {
+    print(paste("Iteration ", j, sep=""))
+    
+    glm1 <- try(glmmLasso(total_imp  ~ cpi_indexaa + ln_ghe_gdp_2015_ghe + hypertension_average + obese_average + smoking_prevalence + alcohol_consumption + ln_tax_gdp_hf + v2x_mpi + v2x_corr +  ln_ldi_pc_2015 + ln_urban_un + ln_pop65_pct_wb + risk_target_ncds_2015 + ncd_burden_who_2015 + ln_mx_warterror_10yr + fedu_yrs_pc_1519 + uhc_index_2015 + ln_oilres_regav_2015 + muslim00 + dist_coast + elf1 + as.factor(legor_fra) + as.factor(legor_gbr) + as.factor(legor_sca) + as.factor(legor_soc) + as.factor(cont_africa) + as.factor(cont_asia) + as.factor(cont_europe) + as.factor(cont_south_america) + as.factor(cont_north_america) + as.factor(yr1)  + as.factor(yr3),
+          rnd = list(iso3 = ~1), family = family,data = mydata, lambda = lambda[j],
+          switch.NR = TRUE, final.re = TRUE,
+control=list(start = Delta.start,  q_start = Q.start)), silent = TRUE)
+
+    if(class(glm1)!="try-error")
+      {  
+      BIC_vec[j]<-glm1$bic
+      }
+  }
+    
+opt<-which.min(BIC_vec)
+	
+#Run glmmLasso
+lm1 <- glmmLasso(total_imp ~ cpi_indexaa + ln_ghe_gdp_2015_ghe + hypertension_average + obese_average + smoking_prevalence + alcohol_consumption + ln_tax_gdp_hf + v2x_mpi + v2x_corr +  ln_ldi_pc_2015 + ln_urban_un + ln_pop65_pct_wb + risk_target_ncds_2015 + ncd_burden_who_2015 + ln_mx_warterror_10yr + fedu_yrs_pc_1519 + uhc_index_2015 + ln_oilres_regav_2015 + muslim00 + dist_coast + elf1 + as.factor(legor_fra) + as.factor(legor_gbr) + as.factor(legor_sca) + as.factor(legor_soc) + as.factor(cont_africa) + as.factor(cont_asia) + as.factor(cont_europe) + as.factor(cont_south_america) + as.factor(cont_north_america) + as.factor(yr1)  + as.factor(yr3), rnd = list(iso3 =~1), family = family,lambda=lambda[opt], data = mydata, switch.NR = TRUE, final.re = TRUE, control=list(start = Delta.start, q_start = Q.start))
+
+summary(lm1)
+
+#Produce table of results (Appendix table A.x)
+library(flextable)
+
+output <- summary(lm1)
+coef <- as.data.frame(output[['coefficients']])
+coef$Label <- rownames(coef)
+coef <- coef[ , c(5, 1:4)]
+coef[ , 2:5] <- round(coef[ , 2:5], 3)
+flextable(coef)
