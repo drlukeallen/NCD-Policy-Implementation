@@ -32,11 +32,9 @@ mydata <- read.dta("ncd_imp_panel.dta")
 myvars <- names(mydata) %in% c("ihme_country_code", "un_country_code", "who_country_code", "who_country_name",  "transparencyindex", "dd_2015, dd_mode_201519", "gdppc_2005_int_ihme", "ln_gdppc_2005_int_ihme", "ictd_taxrev_inclsc_2015", "ictd_taxrev_exclsc_2015", "uhc_scaindex_2015", "ba_all_label_iso3", "ba_comm_label_iso3", "dd_2015", "dd_mode_201519") 
 
 mydata <- mydata[!myvars]
-View(mydata)
 
 #Drop missing cases
 mydata <- na.omit(mydata)
-View(mydata)
 
 #Standardize all variables
 mydata$total_imp <-scale(mydata$total_imp)
@@ -83,6 +81,7 @@ mydata$yr2<-scale(mydata$yr2)
 mydata$yr3<-scale(mydata$yr3)
 
 mydata<-data.frame(mydata)
+
 #Classify factor variables
 mydata$country1 <- factor(mydata$country1)
 mydata$iso3 <- factor(mydata$iso3)
@@ -99,7 +98,6 @@ mydata$cont_europe <- factor(mydata$cont_europe)
 mydata$cont_oceania <- factor(mydata$cont_oceania)
 mydata$cont_south_america <- factor(mydata$cont_south_america)
 mydata$cont_north_america <- factor(mydata$cont_north_america)
-
 
 #Using BIC to determine the optimal tuning parameter lambda
 lambda <- seq(500, 0, by=-5)
