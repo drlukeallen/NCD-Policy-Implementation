@@ -1,12 +1,13 @@
 ****Replication code for regression analyses for "Implementation of non-communicable disease policies from 2015 to 2020: a geopolitical analysis of 194 countries"****
 ****Authors: Luke Allen, Hampus Holmer, and Simon Wigley                                                                                                          ****
-****Draft: 18 Nov 2020                                                                                                                                            ****
+****Draft: 21 May 2021                                                                                                                                            ****
 ****Data and code not to be used or cited without permission of the authors                                                                                       ****
 
 set more off
 clear
 
-use "ncd_imp_panel.dta" 
+
+use "ncd_imp_data.dta" 
 xtset country1 year
 
 eststo clear
@@ -21,11 +22,12 @@ preserve
 center  target mortality_data risk_factor_surveys plan tob_tax smoke_free graphic_warnings tob_advert alc_sales alc_advert alc_tax salt fat child_food_market milk_code phys_mass_media clinical_guide cardio_therapies ///
 total_imp comm_imp no_imp tob_imp_total alc_imp_total fedu_yrs_pc_1519 risk_target_ncds_2015 uhc_index_2015 ncd_burden_who_2015 alcohol_consumption smoking_prevalence hypertension_average obese_average  /// 
 obese_child_average cpi_indexaa elf1 muslim00 dist_coast cont_africa cont_asia cont_europe cont_oceania cont_north_america cont_south_america legor_gbr legor_fra legor_soc legor_deu legor_sca v2x_mpi v2x_corr ln_ldi_pc_2015 /// 
-ln_ghe_gdp_2015_ghe  ln_mx_warterror_10yr tax_gdp_hf ln_tax_gdp_hf ln_pop65_pct_wb ln_oilres_regav_2015 ln_urban_un transparencyindex missing_points sids dd_2015 dd_mode_201519, inplace standardize nolabel
+ln_ghe_gdp_2015_ghe  ln_mx_warterror_10yr tax_gdp_hf ln_tax_gdp_hf ln_pop65_pct_wb ln_oilres_regav_2015 ln_urban_un transparencyindex missing_points sids dd_2015 dd_mode_201519 /// 
+prop_imp_wtmm prop_nomiss prop_imp prop_avg, inplace standardize nolabel
 		  
 
 ***COEFFICIENT PLOTS***
-ssc install coefplot
+ssc install coefplot, replace
  
 *****Bivariate regressions for all policies (with and without controls) (Reproduce Figure 7)****
 
@@ -395,7 +397,7 @@ cont_africa cont_asia cont_europe cont_north_america cont_south_america) ///
  stats(N_g r2_o, labels("Countries" "R-squared (overall)"))  addnote("All random effects. All include year dummies. Robust standard errors in parentheses") nogap replace
  
  
-****Bivariate regressions for risk factors and specific policies (with and without controls) (with and without controls) (reproduce Table 2)****
+****Bivariate regressions for risk factors and specific policies (with and without controls) (with and without controls) (reproduce appendix Table A.x)****
 eststo clear
 
 xtset country1 year
@@ -415,6 +417,7 @@ eststo: xtreg salt hypertension_average ln_ldi_pc_2015 ln_urban_un ln_pop65_pct_
 eststo: xtreg alc_imp_total alcohol_consumption yr*, r 
 eststo: xtreg alc_imp_total alcohol_consumption ln_ldi_pc_2015 ln_urban_un ln_pop65_pct_wb cont_africa cont_asia cont_europe cont_north_america cont_south_america  dist_coast muslim00 legor_gbr legor_deu legor_soc legor_fra elf1  yr*, r 
 
+***Table A.x***
 esttab using imp_risk_factors_table.csv,  se  star(* 0.05 ** 0.01 *** 0.001) label title("Table 2: Bivariate results with and without controls - risk factors and specific policies for all years") ///
 order(smoking_prevalence  obese_average obese_child_average hypertension_average  alcohol_consumption) /// 
  stats(N_g r2_o, labels("Countries" "R-squared (overall)"))  addnote("All random effects. All include year dummies. Robust standard errors in parentheses") nogap replace
@@ -427,72 +430,255 @@ xtset country1 year
 
 ***Controlling for HRV Transparency Index***
 eststo: xtreg total_imp transparencyindex v2x_mpi v2x_corr cpi_indexaa ln_mx_warterror_10yr risk_target_ncds_2015 ncd_burden_who_2015 ln_ghe_gdp_2015_ghe ln_tax_gdp_hf uhc_index_2015  fedu_yrs_pc_1519 ln_oilres_regav_2015 smoking_prevalence /// 
-alcohol_consumption hypertension_average obese_average ln_ldi_pc_2015 ln_urban_un ln_pop65_pct_wb  cont_africa cont_asia cont_europe cont_north_america cont_south_america  dist_coast muslim00 legor_gbr /// 
-legor_deu legor_soc legor_fra elf1 yr*, r 
+alcohol_consumption hypertension_average obese_average ln_ldi_pc_2015 ln_urban_un ln_pop65_pct_wb  cont_africa cont_asia cont_europe cont_north_america cont_south_america  dist_coast muslim00  /// 
+legor_gbr legor_deu legor_soc legor_fra elf1 yr*, r 
 
 ***Controlling for number of missing implementation scores (DK, NA, NR, ND, -)***
 eststo: xtreg total_imp missing_points v2x_mpi v2x_corr cpi_indexaa ln_mx_warterror_10yr risk_target_ncds_2015 ncd_burden_who_2015 ln_ghe_gdp_2015_ghe ln_tax_gdp_hf uhc_index_2015  fedu_yrs_pc_1519 ln_oilres_regav_2015 smoking_prevalence /// 
-alcohol_consumption hypertension_average obese_average ln_ldi_pc_2015 ln_urban_un ln_pop65_pct_wb  cont_africa cont_asia cont_europe cont_north_america cont_south_america  dist_coast muslim00 legor_gbr /// 
-legor_deu legor_soc legor_fra elf1 yr*, r
+alcohol_consumption hypertension_average obese_average ln_ldi_pc_2015 ln_urban_un ln_pop65_pct_wb  cont_africa cont_asia cont_europe cont_north_america cont_south_america  dist_coast muslim00  /// 
+legor_gbr legor_deu legor_soc legor_fra elf1 yr*, r
 
 ***Controlling for small island developing states (SIDS) (with and without dist_coast)***
-eststo: xtreg total_imp sids  ln_ldi_pc_2015 ln_urban_un ln_pop65_pct_wb  cont_africa cont_asia cont_europe cont_north_america cont_south_america   muslim00 legor_gbr /// 
-legor_deu legor_soc legor_fra elf1 yr*, r
+eststo: xtreg total_imp sids  ln_ldi_pc_2015 ln_urban_un ln_pop65_pct_wb  cont_africa cont_asia cont_europe cont_north_america cont_south_america   muslim00  /// 
+legor_gbr legor_deu legor_soc legor_fra elf1 yr*, r
 
 eststo: xtreg total_imp sids v2x_mpi v2x_corr cpi_indexaa ln_mx_warterror_10yr risk_target_ncds_2015 ncd_burden_who_2015 ln_ghe_gdp_2015_ghe ln_tax_gdp_hf uhc_index_2015  fedu_yrs_pc_1519 ln_oilres_regav_2015 smoking_prevalence /// 
-alcohol_consumption hypertension_average obese_average ln_ldi_pc_2015 ln_urban_un ln_pop65_pct_wb  cont_africa cont_asia cont_europe cont_north_america cont_south_america   muslim00 legor_gbr /// 
-legor_deu legor_soc legor_fra elf1 yr*, r
+alcohol_consumption hypertension_average obese_average ln_ldi_pc_2015 ln_urban_un ln_pop65_pct_wb  cont_africa cont_asia cont_europe cont_north_america cont_south_america  muslim00  /// 
+legor_gbr legor_deu legor_soc legor_fra elf1 yr*, r
 
-eststo: xtreg total_imp sids  ln_ldi_pc_2015 ln_urban_un ln_pop65_pct_wb  cont_africa cont_asia cont_europe cont_north_america cont_south_america dist_coast muslim00 legor_gbr /// 
-legor_deu legor_soc legor_fra elf1 yr*, r
+eststo: xtreg total_imp sids  ln_ldi_pc_2015 ln_urban_un ln_pop65_pct_wb  cont_africa cont_asia cont_europe cont_north_america cont_south_america dist_coast muslim00  /// 
+legor_gbr legor_deu legor_soc legor_fra elf1 yr*, r
 
-eststo: xtreg total_imp sids v2x_mpi v2x_corr cpi_indexaa ln_mx_warterror_10yr risk_target_ncds_2015 ncd_burden_who_2015 ln_ghe_gdp_2015_ghe ln_tax_gdp_hf uhc_index_2015  fedu_yrs_pc_1519 ln_oilres_regav_2015 smoking_prevalence /// 
-alcohol_consumption hypertension_average obese_average ln_ldi_pc_2015 ln_urban_un ln_pop65_pct_wb  cont_africa cont_asia cont_europe cont_north_america cont_south_america   dist_coast muslim00 legor_gbr /// 
-legor_deu legor_soc legor_fra elf1 yr*, r
+eststo: xtreg total_imp sids v2x_mpi v2x_corr cpi_indexaa ln_mx_warterror_10yr risk_target_ncds_2015 ncd_burden_who_2015 ln_ghe_gdp_2015_ghe ln_tax_gdp_hf uhc_index_2015 fedu_yrs_pc_1519 ln_oilres_regav_2015 smoking_prevalence /// 
+alcohol_consumption hypertension_average obese_average ln_ldi_pc_2015 ln_urban_un ln_pop65_pct_wb  cont_africa cont_asia cont_europe cont_north_america cont_south_america dist_coast muslim00  /// 
+legor_gbr legor_deu legor_soc legor_fra elf1 yr*, r
 
+
+***Table A.x***
 esttab using imp_robustness.csv,  se  star(* 0.05 ** 0.01 *** 0.001) label title("Table A.x: Robustness checks") ///
-order(transparencyindex missing_points sids v2x_mpi v2x_corr cpi_indexaa ln_ghe_gdp_2015_ghe ln_tax_gdp_hf uhc_index_2015 risk_target_ncds_2015 ncd_burden_who_2015 smoking_prevalence alcohol_consumption hypertension_average obese_average  fedu_yrs_pc_1519 /// 
+order(transparencyindex missing_points  sids v2x_mpi v2x_corr cpi_indexaa ln_ghe_gdp_2015_ghe ln_tax_gdp_hf uhc_index_2015 risk_target_ncds_2015 ncd_burden_who_2015 smoking_prevalence /// 
+alcohol_consumption hypertension_average obese_average fedu_yrs_pc_1519 /// 
 ln_mx_warterror_10yr ln_oilres_regav_2015  ln_ldi_pc_2015 ln_urban_un ln_pop65_pct_wb dist_coast elf1 muslim00 legor_gbr legor_deu legor_soc legor_fra /// 
 cont_africa cont_asia cont_europe cont_north_america cont_south_america) ///  
  stats(N_g r2_o, labels("Countries" "R-squared (overall)"))  addnote("All random effects. All include year dummies. Robust standard errors in parentheses") nogap replace
 
-***RESTORE TO NON-STANDARDIZED (i.e. original)***
+***ADJUSTED P-VALUES FOR MULTIPLE TESTING***
+net install wyoung, from("https://raw.githubusercontent.com/reifjulian/wyoung/controls-option") replace
+
+****Multivariate model with controls***
+wyoung  total_imp, cmd(xtreg  OUTCOMEVAR v2x_mpi v2x_corr cpi_indexaa ln_ghe_gdp_2015_ghe ln_tax_gdp_hf uhc_index_2015 risk_target_ncds_2015 ncd_burden_who_2015 smoking_prevalence alcohol_consumption hypertension_average /// 
+obese_average fedu_yrs_pc_1519 ln_mx_warterror_10yr ln_oilres_regav_2015 ///
+ln_ldi_pc_2015 ln_urban_un ln_pop65_pct_wb  cont_africa cont_asia cont_europe cont_north_america cont_south_america dist_coast muslim00 legor_gbr legor_deu legor_soc legor_fra elf1 yr*) ///
+familyp( v2x_mpi v2x_corr cpi_indexaa ln_ghe_gdp_2015_ghe ln_tax_gdp_hf uhc_index_2015 risk_target_ncds_2015 ncd_burden_who_2015 smoking_prevalence alcohol_consumption hypertension_average obese_average ///
+fedu_yrs_pc_1519 ln_mx_warterror_10yr ln_oilres_regav_2015)  cluster(country1) bootstrap(200) seed(20)
+
+matrix list r(table)
+ 
+ ***RESTORE TO NON-STANDARDIZED (i.e. original)***
 restore
 
 
 ***PRESERVE ORIGINAL***
 preserve
 
+***Regressions based on multiple imputaton of missing values (Reproduce appendix Table A.x)***
+***Unreported policy scores also imputed and total implementation then calculated for each imputed data set****
+
+mi set flong
+mi xtset country1 year
+
+mi register imputed ln_ldi_pc_2015 fedu_yrs_pc_1519 ln_mx_warterror_10yr risk_target_ncds_2015 ln_ghe_gdp_2015_ghe ncd_burden_who_2015 alcohol_consumption smoking_prevalence obese_average obese_child_average /// 
+mean_bmi_average ln_pop65_pct_wb ln_oilres_regav_2015 cpi_indexaa ln_tax_gdp_hf muslim00 v2x_mpi v2x_corr transparencyindex dd_mode_201519 uhc_index_2015 ///
+target_ms risk_factor_surveys_ms plan_ms tob_tax_ms  alc_sales_ms alc_advert_ms alc_tax_ms salt_ms fat_ms child_food_market_ms milk_code_ms /// 
+phys_mass_media_ms clinical_guide_ms cardio_therapies_ms
+
+mi impute mvn ln_ldi_pc_2015 fedu_yrs_pc_1519 ln_mx_warterror_10yr risk_target_ncds_2015 ln_ghe_gdp_2015_ghe ncd_burden_who_2015 alcohol_consumption smoking_prevalence obese_average obese_child_average /// 
+mean_bmi_average ln_pop65_pct_wb ln_oilres_regav_2015 cpi_indexaa ln_tax_gdp_hf muslim00 v2x_mpi v2x_corr  transparencyindex dd_mode_201519 uhc_index_2015 ///
+target_ms  risk_factor_surveys_ms plan_ms tob_tax_ms alc_sales_ms alc_advert_ms alc_tax_ms salt_ms fat_ms child_food_market_ms milk_code_ms ///
+phys_mass_media_ms clinical_guide_ms cardio_therapies_ms ///
+= cont_africa cont_asia cont_europe cont_north_america cont_south_america sids ln_urban_un elf1 dist_coast legor_gbr legor_fra legor_soc legor_deu yr1 yr2 /// 
+mortality_data_ms smoke_free_ms graphic_warnings_ms tob_advert_ms prop_nomiss  total_imp, ///
+add(30) replace rseed (53421) initmcmc(em, iterate(500))
+
+***Create new total implementation variable for each imputed data set***
+mi passive: gen total_imp_mi = target_ms + mortality_data_ms + risk_factor_surveys_ms + plan_ms + tob_tax_ms + smoke_free_ms + graphic_warnings_ms + tob_advert_ms + alc_sales_ms + alc_advert_ms + alc_tax_ms + salt_ms + fat_ms /// 
++ child_food_market_ms + milk_code_ms + phys_mass_media_ms + clinical_guide_ms + cardio_therapies_ms
+
+***Standardize variables***
+qui foreach var in total_imp total_imp_mi v2x_mpi v2x_corr cpi_indexaa ln_mx_warterror_10yr risk_target_ncds_2015 ncd_burden_who_2015 ln_ghe_gdp_2015_ghe ln_tax_gdp_hf uhc_index_2015  fedu_yrs_pc_1519 ///
+ln_oilres_regav_2015 smoking_prevalence alcohol_consumption hypertension_average obese_average ln_ldi_pc_2015 ln_urban_un ln_pop65_pct_wb  cont_africa cont_asia cont_europe /// 
+cont_north_america cont_south_america  dist_coast muslim00 legor_gbr legor_deu legor_soc ///
+legor_fra elf1 yr1 yr2 {
+mi passive: egen `var'_z=std(`var')
+}
+
+
+
+***Run regression on imputed datasets and combine results using Rubin rules***
+eststo clear
+
+qui foreach var in v2x_mpi_z v2x_corr_z cpi_indexaa_z ln_ghe_gdp_2015_ghe_z ln_tax_gdp_hf_z uhc_index_2015_z risk_target_ncds_2015_z ncd_burden_who_2015_z smoking_prevalence_z alcohol_consumption_z /// 
+hypertension_average_z obese_average_z  fedu_yrs_pc_1519_z /// 
+ln_mx_warterror_10yr_z ln_oilres_regav_2015_z {
+eststo: mi est, post: xtreg total_imp_z `var' ln_ldi_pc_2015_z ln_urban_un_z ln_pop65_pct_wb_z  cont_africa_z cont_asia_z cont_europe_z cont_north_america_z cont_south_america_z  dist_coast_z muslim00_z legor_gbr_z legor_deu_z legor_soc_z legor_fra_z elf1_z yr1_z yr2_z, r
+}
+
+
+
+eststo: mi est, post: xtreg total_imp_mi_z v2x_mpi_z v2x_corr_z cpi_indexaa_z ln_mx_warterror_10yr_z risk_target_ncds_2015_z ncd_burden_who_2015_z ln_ghe_gdp_2015_ghe_z ln_tax_gdp_hf_z uhc_index_2015_z  fedu_yrs_pc_1519_z ///
+ln_oilres_regav_2015_z smoking_prevalence_z alcohol_consumption_z hypertension_average_z obese_average_z ln_ldi_pc_2015_z ln_urban_un_z ln_pop65_pct_wb_z  cont_africa_z cont_asia_z cont_europe_z cont_north_america_z ///
+cont_south_america_z  dist_coast_z muslim00_z legor_gbr_z legor_deu_z legor_soc_z legor_fra_z elf1_z yr1_z yr2_z, r 
+
+esttab using imp_robustness_mi.csv,  se  star(* 0.05 ** 0.01 *** 0.001) label title("Table A.x: Robustness checks - multiple imputation") ///
+order(v2x_mpi_z v2x_corr_z cpi_indexaa_z ln_ghe_gdp_2015_ghe_z ln_tax_gdp_hf_z uhc_index_2015_z risk_target_ncds_2015_z ncd_burden_who_2015_z smoking_prevalence_z alcohol_consumption_z /// 
+hypertension_average_z obese_average_z  fedu_yrs_pc_1519_z ln_mx_warterror_10yr_z ln_oilres_regav_2015_z  ln_ldi_pc_2015_z ln_urban_un_z ln_pop65_pct_wb_z dist_coast_z elf1_z muslim00_z legor_gbr_z legor_deu_z ///
+legor_soc_z legor_fra_z cont_africa_z cont_asia_z cont_europe_z cont_north_america_z cont_south_america_z) ///  
+stats(N_g r2_o, labels("Countries" "R-squared (overall)"))  addnote("All random effects. All include year dummies. Robust standard errors in parentheses") nogap replace
+ 
+***Calculate overall R-squared for each model***
+eststo clear
+
+mi query
+local M = r(M)
+scalar rsq = 0
+
+qui mi xeq 1/`M': xtreg total_imp_z v2x_mpi_z ln_ldi_pc_2015_z ln_urban_un_z ln_pop65_pct_wb_z  cont_africa_z cont_asia_z cont_europe_z cont_north_america_z cont_south_america_z  dist_coast_z muslim00_z legor_gbr_z legor_deu_z legor_soc_z legor_fra_z elf1_z yr1_z yr2_z, r; ; scalar rsq = rsq + e(r2_o)
+scalar rsq = rsq/`M'
+di rsq
+
+qui mi xeq 1/`M': xtreg total_imp_z v2x_corr_z ln_ldi_pc_2015_z ln_urban_un_z ln_pop65_pct_wb_z  cont_africa_z cont_asia_z cont_europe_z cont_north_america_z cont_south_america_z  dist_coast_z muslim00_z legor_gbr_z legor_deu_z legor_soc_z legor_fra_z elf1_z yr1_z yr2_z, r; ; scalar rsq = rsq + e(r2_o)
+scalar rsq = rsq/`M'
+di rsq
+
+qui mi xeq 1/`M': xtreg total_imp_z cpi_indexaa_z ln_ldi_pc_2015_z ln_urban_un_z ln_pop65_pct_wb_z  cont_africa_z cont_asia_z cont_europe_z cont_north_america_z cont_south_america_z  dist_coast_z muslim00_z legor_gbr_z legor_deu_z legor_soc_z legor_fra_z elf1_z yr1_z yr2_z, r; ; scalar rsq = rsq + e(r2_o)
+scalar rsq = rsq/`M'
+di rsq
+
+qui mi xeq 1/`M': xtreg total_imp_z ln_ghe_gdp_2015_ghe_z ln_ldi_pc_2015_z ln_urban_un_z ln_pop65_pct_wb_z  cont_africa_z cont_asia_z cont_europe_z cont_north_america_z cont_south_america_z  dist_coast_z muslim00_z legor_gbr_z legor_deu_z legor_soc_z legor_fra_z elf1_z yr1_z yr2_z, r; ; scalar rsq = rsq + e(r2_o)
+scalar rsq = rsq/`M'
+di rsq
+
+qui mi xeq 1/`M': xtreg total_imp_z ln_tax_gdp_hf_z ln_ldi_pc_2015_z ln_urban_un_z ln_pop65_pct_wb_z  cont_africa_z cont_asia_z cont_europe_z cont_north_america_z cont_south_america_z  dist_coast_z muslim00_z legor_gbr_z legor_deu_z legor_soc_z legor_fra_z elf1_z yr1_z yr2_z, r; ; scalar rsq = rsq + e(r2_o)
+scalar rsq = rsq/`M'
+di rsq
+
+qui mi xeq 1/`M': xtreg total_imp_z uhc_index_2015_z ln_ldi_pc_2015_z ln_urban_un_z ln_pop65_pct_wb_z  cont_africa_z cont_asia_z cont_europe_z cont_north_america_z cont_south_america_z  dist_coast_z muslim00_z legor_gbr_z legor_deu_z legor_soc_z legor_fra_z elf1_z yr1_z yr2_z, r; ; scalar rsq = rsq + e(r2_o)
+scalar rsq = rsq/`M'
+di rsq
+
+qui mi xeq 1/`M': xtreg total_imp_z risk_target_ncds_2015_z ln_ldi_pc_2015_z ln_urban_un_z ln_pop65_pct_wb_z  cont_africa_z cont_asia_z cont_europe_z cont_north_america_z cont_south_america_z  dist_coast_z muslim00_z legor_gbr_z legor_deu_z legor_soc_z legor_fra_z elf1_z yr1_z yr2_z, r; ; scalar rsq = rsq + e(r2_o)
+scalar rsq = rsq/`M'
+di rsq
+
+qui mi xeq 1/`M': xtreg total_imp_z ncd_burden_who_2015_z ln_ldi_pc_2015_z ln_urban_un_z ln_pop65_pct_wb_z  cont_africa_z cont_asia_z cont_europe_z cont_north_america_z cont_south_america_z  dist_coast_z muslim00_z legor_gbr_z legor_deu_z legor_soc_z legor_fra_z elf1_z yr1_z yr2_z, r; ; scalar rsq = rsq + e(r2_o)
+scalar rsq = rsq/`M'
+di rsq
+
+qui mi xeq 1/`M': xtreg total_imp_z smoking_prevalence_z ln_ldi_pc_2015_z ln_urban_un_z ln_pop65_pct_wb_z  cont_africa_z cont_asia_z cont_europe_z cont_north_america_z cont_south_america_z  dist_coast_z muslim00_z legor_gbr_z legor_deu_z legor_soc_z legor_fra_z elf1_z yr1_z yr2_z, r; ; scalar rsq = rsq + e(r2_o)
+scalar rsq = rsq/`M'
+di rsq
+
+qui mi xeq 1/`M': xtreg total_imp_z alcohol_consumption_z ln_ldi_pc_2015_z ln_urban_un_z ln_pop65_pct_wb_z  cont_africa_z cont_asia_z cont_europe_z cont_north_america_z cont_south_america_z  dist_coast_z muslim00_z legor_gbr_z legor_deu_z legor_soc_z legor_fra_z elf1_z yr1_z yr2_z, r; ; scalar rsq = rsq + e(r2_o)
+scalar rsq = rsq/`M'
+di rsq
+
+eststo: qui mi xeq 1/`M': xtreg total_imp_z hypertension_average_z ln_ldi_pc_2015_z ln_urban_un_z ln_pop65_pct_wb_z  cont_africa_z cont_asia_z cont_europe_z cont_north_america_z cont_south_america_z  dist_coast_z muslim00_z legor_gbr_z legor_deu_z legor_soc_z legor_fra_z elf1_z yr1_z yr2_z, r; ; scalar rsq = rsq + e(r2_o)
+scalar rsq = rsq/`M'
+di rsq
+
+qui mi xeq 1/`M': xtreg total_imp_z obese_average_z ln_ldi_pc_2015_z ln_urban_un_z ln_pop65_pct_wb_z  cont_africa_z cont_asia_z cont_europe_z cont_north_america_z cont_south_america_z  dist_coast_z muslim00_z legor_gbr_z legor_deu_z legor_soc_z legor_fra_z elf1_z yr1_z yr2_z, r; ; scalar rsq = rsq + e(r2_o)
+scalar rsq = rsq/`M'
+di rsq
+
+qui mi xeq 1/`M': xtreg total_imp_z fedu_yrs_pc_1519_z ln_ldi_pc_2015_z ln_urban_un_z ln_pop65_pct_wb_z  cont_africa_z cont_asia_z cont_europe_z cont_north_america_z cont_south_america_z  dist_coast_z muslim00_z legor_gbr_z legor_deu_z legor_soc_z legor_fra_z elf1_z yr1_z yr2_z, r; ; scalar rsq = rsq + e(r2_o)
+scalar rsq = rsq/`M'
+di rsq
+
+qui mi xeq 1/`M': xtreg total_imp_z ln_mx_warterror_10yr_z ln_ldi_pc_2015_z ln_urban_un_z ln_pop65_pct_wb_z  cont_africa_z cont_asia_z cont_europe_z cont_north_america_z cont_south_america_z  dist_coast_z muslim00_z legor_gbr_z legor_deu_z legor_soc_z legor_fra_z elf1_z yr1_z yr2_z, r; ; scalar rsq = rsq + e(r2_o)
+scalar rsq = rsq/`M'
+di rsq
+
+qui mi xeq 1/`M': xtreg total_imp_z ln_oilres_regav_2015_z ln_ldi_pc_2015_z ln_urban_un_z ln_pop65_pct_wb_z  cont_africa_z cont_asia_z cont_europe_z cont_north_america_z cont_south_america_z  dist_coast_z muslim00_z legor_gbr_z legor_deu_z legor_soc_z legor_fra_z elf1_z yr1_z yr2_z, r; ; scalar rsq = rsq + e(r2_o)
+scalar rsq = rsq/`M'
+di rsq
+
+qui mi xeq 1/`M': xtreg total_imp_mi_z v2x_mpi_z v2x_corr_z cpi_indexaa_z ln_mx_warterror_10yr_z risk_target_ncds_2015_z ncd_burden_who_2015_z ln_ghe_gdp_2015_ghe_z ln_tax_gdp_hf_z uhc_index_2015_z  fedu_yrs_pc_1519_z ///
+ln_oilres_regav_2015_z smoking_prevalence_z alcohol_consumption_z hypertension_average_z obese_average_z ln_ldi_pc_2015_z ln_urban_un_z ln_pop65_pct_wb_z  cont_africa_z cont_asia_z cont_europe_z cont_north_america_z ///
+cont_south_america_z  dist_coast_z muslim00_z legor_gbr_z legor_deu_z legor_soc_z legor_fra_z elf1_z yr1_z yr2_z, r; scalar rsq = rsq + e(r2_o)
+scalar rsq = rsq/`M'
+di rsq 
+
+
+ ***RESTORE TO ORIGINAL***
+restore
+
+ssc install concord
+
+***PRESERVE ORIGINAL***
+preserve
+
 ***BLAND-ALTMAN PLOTS***
-ssc install baplot
 xtset country1 year
 
-
-***Random effects regressions for all years***
+***Random effects regressions for all years: All policies***
 xtreg total_imp v2x_mpi v2x_corr cpi_indexaa ln_mx_warterror_10yr risk_target_ncds_2015 ncd_burden_who_2015 ln_ghe_gdp_2015_ghe ln_tax_gdp_hf uhc_index_2015  fedu_yrs_pc_1519 /// 
 ln_oilres_regav_2015 smoking_prevalence alcohol_consumption hypertension_average obese_average ln_ldi_pc_2015 ln_urban_un ln_pop65_pct_wb  cont_africa cont_asia cont_europe cont_north_america cont_south_america  /// 
 dist_coast muslim00 legor_gbr legor_deu legor_soc legor_fra elf1  yr* , r
 
 predict predicted_all 
 
+***Bland-Altman plot for  2019 implementation: All policies***
+concord total_imp predicted_all if year==2019
+
+gen diff = total_imp-predicted_all
+gen avg = (total_imp+predicted_all)/2
+
+su diff
+local mdiff=r(mean)
+local lrr = `mdiff' - 2*r(Var)^.5
+local urr = `mdiff' + 2*r(Var)^.5
+display "Mean difference=` mdiff'"
+display "Reference Range= `lrr' to `urr'"
+
+graph twoway  (scatter diff avg, mlabel(ba_all_label_ctry) mlabsize(tiny) msym(oh) jitter(4) )  if year==2019, yline(`mdiff', lc(black) lwidth(vvthin)) yline(`lrr', lc(black) lpattern(dash) lwidth(vvvthin)) ///
+yline(`urr', lc(black) lpattern(dash) lwidth(vvvthin)) xtitle(Average of actual and predicted implementation scores, size(small)) ///
+ytitle("Difference between actual and" "predicted implementation scores", size(small)) title("Bland-Altman plot for all policies in 2019") ylab(-6(2)6) legend(off) scheme(s1color) /// 
+note("Points above (below) the zero line do better (worse) than predicted. 95% of all points lie between the dashed lines.""Predicted values based on regression model with all covariates." ///
+"The concordance correlation coefficient for actual vs predicted is 0.780 (95% CI 0.749 to 0.823, p<0.0001).", size(vsmall))
+
+graph export manual_baplot_2019_all.pdf, replace
+
+
+restore
+
+preserve
+
+***Random effects regressions for all years: Commercial policies***
 xtreg comm_imp v2x_mpi v2x_corr cpi_indexaa ln_mx_warterror_10yr risk_target_ncds_2015 ncd_burden_who_2015 ln_ghe_gdp_2015_ghe ln_tax_gdp_hf uhc_index_2015  fedu_yrs_pc_1519 /// 
 ln_oilres_regav_2015 smoking_prevalence alcohol_consumption hypertension_average obese_average ln_ldi_pc_2015 ln_urban_un ln_pop65_pct_wb  cont_africa cont_asia cont_europe cont_north_america cont_south_america  /// 
 dist_coast muslim00 legor_gbr legor_deu legor_soc legor_fra elf1  yr* , r
 
 predict predicted_comm 
 
-***Plots for 2019 implementation (Reproduce Figures 9 and 13)***
-drop if year<2019
-xtset country1 year
+***Bland-Altman plot for  2019 implementation: Commercial policies***
+concord comm_imp predicted_comm if year==2019
 
-batplot  total_imp predicted_all, valabel(country) notrend sc(mlabel(ba_all_label_iso3) mlabsize(tiny)  jitter(4)) title("Figure 9: Bland-Altman plot for" "all policies in 2019")  ///
-xtitle(Average of predicted and actual implementation score, size(small)) ytitle("Difference between predicted and" "actual implementation score", size(small)) note("") ///
-saving(batplot_2019_all, replace)
+gen diff = comm_imp-predicted_comm
+gen avg = (comm_imp+predicted_comm)/2
 
+su diff
+local mdiff = r(mean)
+local lrr = `mdiff' - 2*r(Var)^.5
+local urr = `mdiff' + 2*r(Var)^.5
+display "Mean difference=` mdiff'"
+display "Reference Range= `lrr' to `urr'"
 
-batplot  comm_imp predicted_comm, valabel(country) notrend sc(mlabel(ba_comm_label_iso3) mlabsize(tiny)  jitter(4)) title("Figure 13: Bland-Altman plot for" "commercial policies in 2019")  ///
-xtitle(Average of predicted and actual implementation score, size(small)) ytitle("Difference between predicted and" "actual implementation score", size(small)) note("") ///
-saving(batplot_2019_comm, replace)
+graph twoway (scatter diff avg, mlabel(ba_comm_label_ctry) mlabsize(tiny) msym(oh) jitter(4))  if year==2019, yline(`mdiff', lc(black) lwidth(vvthin)) yline(`lrr', lc(black) lpattern(dash) lwidth(vvvthin)) ///
+yline(`urr', lc(black) lpattern(dash) lwidth(vvvthin)) xtitle(Average of actual and predicted implementation scores, size(small)) ///
+ytitle("Difference between actual and" "predicted implementation scores", size(small)) title("Bland-Altman plot for commercial policies in 2019") ylab(-4(2)4) legend(off) scheme(s1color) /// 
+note("Points above (below) the zero line do better (worse) than predicted. 95% of all points lie between the dashed lines.""Predicted values based on regression model with all covariates." ///
+"The concordance correlation coefficient for actual vs predicted is 0.762 (95% CI 0.695 to 0.830, p<0.0001).", size(vsmall))
+graph export manual_baplot_2019_comm.pdf, replace
 
 
 ***RESTORE TO ORIGINAL***
@@ -508,7 +694,7 @@ alcohol_consumption hypertension_average obese_average ln_ldi_pc_2015 ln_urban_u
 
 estimates store random
 
-quietly xtreg total_imp v2x_mpi v2x_corr cpi_indexaa ln_mx_warterror_10yr risk_target_ncds_2015 ncd_burden_who_2015 ln_ghe_gdp_2015_ghe ln_tax_gdp_hf uhc_index_2015  fedu_yrs_pc_1519 ln_oilres_regav_2015 smoking_prevalence /// 
+qui xtreg total_imp v2x_mpi v2x_corr cpi_indexaa ln_mx_warterror_10yr risk_target_ncds_2015 ncd_burden_who_2015 ln_ghe_gdp_2015_ghe ln_tax_gdp_hf uhc_index_2015  fedu_yrs_pc_1519 ln_oilres_regav_2015 smoking_prevalence /// 
 alcohol_consumption hypertension_average obese_average ln_ldi_pc_2015 ln_urban_un ln_pop65_pct_wb  cont_africa cont_asia cont_europe cont_north_america cont_south_america  dist_coast muslim00 legor_gbr legor_deu legor_soc legor_fra elf1 yr*, fe r
 estimates store fixed
 
