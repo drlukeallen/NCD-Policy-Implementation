@@ -20,8 +20,8 @@ preserve
 
 ***STANDARDIZE ALL VARIABLES***
 center  target mortality_data risk_factor_surveys plan tob_tax smoke_free graphic_warnings tob_advert alc_sales alc_advert alc_tax salt fat child_food_market milk_code phys_mass_media clinical_guide cardio_therapies ///
-total_imp comm_imp no_imp tob_imp_total alc_imp_total fedu_yrs_pc_1519 risk_target_ncds_2015 uhc_index_2015 ncd_burden_who_2015 alcohol_consumption smoking_prevalence hypertension_average obese_average  /// 
-obese_child_average cpi_indexaa elf1 muslim00 dist_coast cont_africa cont_asia cont_europe cont_oceania cont_north_america cont_south_america legor_gbr legor_fra legor_soc legor_deu legor_sca v2x_mpi v2x_corr ln_ldi_pc_2015 /// 
+total_imp comm_imp no_imp tob_imp_total alc_imp_total fedu_yrs_pc_1519 risk_target_ncds_2015 uhc_index_2015 uhc_scaindex_2015 ncd_burden_who_2015 alcohol_consumption smoking_prevalence hypertension_average obese_average  /// 
+obese_child_average cpi_indexaa c_pol elf1 muslim00 dist_coast cont_africa cont_asia cont_europe cont_oceania cont_north_america cont_south_america legor_gbr legor_fra legor_soc legor_deu legor_sca v2x_mpi v2x_corr ln_ldi_pc_2015 /// 
 ln_ghe_gdp_2015_ghe  ln_mx_warterror_10yr tax_gdp_hf ln_tax_gdp_hf ln_pop65_pct_wb ln_oilres_regav_2015 ln_urban_un transparencyindex missing_points sids dd_2015 dd_mode_201519 /// 
 prop_imp_wtmm prop_nomiss prop_imp prop_avg, inplace standardize nolabel
 		  
@@ -103,10 +103,10 @@ title("B. Multivariate", size(small)) legend( position(3) cols(1)) ///
 saving(figure1b, replace)
 
 ****Combined figure****
-gr combine figure1a.gph figure1b.gph, title("Figure 7: All policies", size(small))  subtitle("  ", size(tiny)) imargin(0 0 0 0) graphregion(margin(l=0 r=0)) 
+gr combine figure1a.gph figure1b.gph, title("Figure 5: All policies", size(small))  subtitle("  ", size(tiny)) imargin(0 0 0 0) graphregion(margin(l=0 r=0)) 
 graph export figure7.pdf, replace
 
-*****Bivariate regressions for commercial policies (with and without controls) (Reproduce Figure 10)****
+*****Bivariate regressions for commercial policies (with and without controls) (Reproduce Figure 8)****
 
 xtset country1 year
 
@@ -180,7 +180,7 @@ title("B. Multivariate", size(small)) legend( position(3) cols(1)) ///
 saving(figure1b, replace)
 
 ****Combined figure****
-gr combine figure1a.gph figure1b.gph, title("Figure 10: Commercial policies", size(small))  subtitle("  ", size(tiny)) imargin(0 0 0 0) graphregion(margin(l=0 r=0)) 
+gr combine figure1a.gph figure1b.gph, title("Figure 8: Commercial policies", size(small))  subtitle("  ", size(tiny)) imargin(0 0 0 0) graphregion(margin(l=0 r=0)) 
 graph export figure10.pdf, replace
 
 
@@ -462,7 +462,7 @@ ln_mx_warterror_10yr ln_oilres_regav_2015  ln_ldi_pc_2015 ln_urban_un ln_pop65_p
 cont_africa cont_asia cont_europe cont_north_america cont_south_america) ///  
  stats(N_g r2_o, labels("Countries" "R-squared (overall)"))  addnote("All random effects. All include year dummies. Robust standard errors in parentheses") nogap replace
 
-***ADJUSTED P-VALUES FOR MULTIPLE TESTING***
+***ADJUSTED P-VALUES FOR MULTIPLE TESTING (Reproduce appendix Table A.x)***
 net install wyoung, from("https://raw.githubusercontent.com/reifjulian/wyoung/controls-option") replace
 
 ****Multivariate model with controls***
@@ -627,7 +627,7 @@ dist_coast muslim00 legor_gbr legor_deu legor_soc legor_fra elf1  yr* , r
 
 predict predicted_all 
 
-***Bland-Altman plot for  2019 implementation: All policies***
+***Bland-Altman plot for  2019 implementation: All policies (Reproduce figure 7)***
 concord total_imp predicted_all if year==2019
 
 gen diff = total_imp-predicted_all
@@ -660,7 +660,7 @@ dist_coast muslim00 legor_gbr legor_deu legor_soc legor_fra elf1  yr* , r
 
 predict predicted_comm 
 
-***Bland-Altman plot for  2019 implementation: Commercial policies***
+***Bland-Altman plot for  2019 implementation: Commercial policies (Reproduce figure 9)***
 concord comm_imp predicted_comm if year==2019
 
 gen diff = comm_imp-predicted_comm
