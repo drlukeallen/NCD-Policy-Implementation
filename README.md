@@ -2,7 +2,7 @@
 Data and replication code for regression analyses for "Implementation of non-communicable policies from 2015 to 2020: a geopolitical analysis of 194 countries"
 
 Authors: Luke Allen, Hampus Holmer, and Simon Wigley                                                                                                  
-Draft: 18 Nov 2020                                                                                                                                    
+Draft: 21 May 2021                                                                                                                                    
 *Data and code not to be used or cited without permission of authors*
 
 1. csv files contain raw implementation data from Noncommunicable Diseases Progress Monitors for 2015, 2017, and 2020
