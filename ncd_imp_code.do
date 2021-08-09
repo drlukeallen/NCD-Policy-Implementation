@@ -269,15 +269,9 @@ eststo: xtreg total_imp sids  $xlist yr*, r
 eststo: xtreg total_imp transparencyindex v2x_mpi v2x_corr cpi_indexaa ln_mx_warterror_10yr risk_target_ncds_2015 ncd_burden_who_2015 ln_ghe_gdp_2015_ghe ln_tax_gdp_hf uhc_index_2015  fedu_yrs_pc_1519 ln_oilres_regav_2015 smoking_prevalence /// 
 alcohol_consumption hypertension_average obese_average $xlist yr*, r 
 
-***Alternative measure of corporate influence***
-eststo: xtreg total_imp sids v2x_mpi v2x_corr c_pol ln_mx_warterror_10yr risk_target_ncds_2015 ncd_burden_who_2015 ln_ghe_gdp_2015_ghe ln_tax_gdp_hf uhc_index_2015 fedu_yrs_pc_1519 ln_oilres_regav_2015 smoking_prevalence /// 
-alcohol_consumption hypertension_average obese_average ln_ldi_pc_2015 ln_urban_un ln_pop65_pct_wb cont_africa cont_asia cont_europe cont_north_america cont_south_america dist_coast muslim00  /// 
-legor_gbr legor_deu legor_soc legor_fra elf1 yr*, r
-
-
 ***Table A.x***
 esttab using imp_robustness.csv,  se  star(* 0.05 ** 0.01 *** 0.001) label title("Table A.x: Robustness checks") ///
-order(transparencyindex missing_points  sids v2x_mpi v2x_corr cpi_indexaa c_pol ln_ghe_gdp_2015_ghe ln_tax_gdp_hf uhc_index_2015 risk_target_ncds_2015 ncd_burden_who_2015 smoking_prevalence /// 
+order(transparencyindex missing_points  sids v2x_mpi v2x_corr cpi_indexaa ln_ghe_gdp_2015_ghe ln_tax_gdp_hf uhc_index_2015 risk_target_ncds_2015 ncd_burden_who_2015 smoking_prevalence /// 
 alcohol_consumption hypertension_average obese_average fedu_yrs_pc_1519 /// 
 ln_mx_warterror_10yr ln_oilres_regav_2015  ln_ldi_pc_2015 ln_urban_un ln_pop65_pct_wb dist_coast elf1 muslim00 legor_gbr legor_deu legor_soc legor_fra /// 
 cont_africa cont_asia cont_europe cont_north_america cont_south_america) ///  
