@@ -2,9 +2,10 @@
 Data and replication code for regression analyses for "Implementation of non-communicable policies from 2015 to 2020: a geopolitical analysis of 194 countries"
 
 Journal: _Lancet Global Health_
-
 Authors: Luke Allen, Hampus Holmer, and Simon Wigley                                                                                                  
+
 Draft: 1 August 2021                                                                                                                                    
+
 *Data and code not to be cited without permission of authors*
 
 1. csv files contain raw implementation data from Noncommunicable Diseases Progress Monitors for 2015, 2017, and 2020
