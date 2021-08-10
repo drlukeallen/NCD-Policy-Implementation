@@ -2,11 +2,11 @@
 **** Authors: Luke Allen, Hampus Holmer, and Simon Wigley                                                                                                           ****
 **** Journal: Lancet Global Health                                                                                                                                  ****
 **** Updated: 1 August 2021                                                                                                                                         ****
+**** Stata version 14.2                                                                                                                                             ****
 
 set more off
 clear
 
-****Stata version 14.2****
 use "ncd_imp_panel.dta" 
 xtset country1 year
 
