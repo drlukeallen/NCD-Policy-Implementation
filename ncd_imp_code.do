@@ -10,6 +10,7 @@ clear
 use "ncd_imp_panel.dta" 
 xtset country1 year
 
+ssc install center, replace
 ssc install coefplot, replace
 ssc install estout, replace
 
