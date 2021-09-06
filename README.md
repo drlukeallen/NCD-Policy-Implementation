@@ -5,7 +5,7 @@ Journal: _Lancet Global Health_
 
 Authors: Luke Allen, Hampus Holmer, and Simon Wigley                                                                                                  
 
-Draft: 1 August 2021                                                                                                                                    
+Updated: 1 August 2021                                                                                                                                    
 
 *Data and code not to be cited without permission of authors*
 
