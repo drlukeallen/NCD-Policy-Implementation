@@ -7,7 +7,7 @@ Authors: Luke Allen, Hampus Holmer, and Simon Wigley
 
 Updated: 1 August 2021                                                                                                                                    
 
-*Data and code not to be cited without permission of authors*
+*When using the code and/or data please cite the above listed article*
 
 1. csv files contain raw implementation data from Noncommunicable Diseases Progress Monitors for 2015, 2017, and 2020
 2. Stata dta file contains panel data for all regression analyses and the lasso analysis
